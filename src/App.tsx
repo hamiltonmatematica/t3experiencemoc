@@ -242,7 +242,7 @@ export default function App() {
 
             <div className="order-1 lg:order-2">
               <h2 className="text-4xl md:text-5xl font-display font-semibold mb-8">Para quem é o T3 Experience?</h2>
-              <p className="text-lg font-display font-extralight text-white/60 leading-relaxed mb-8">
+              <p className="text-lg font-display font-bold text-white/90 leading-relaxed mb-8">
                 Empresários, líderes, gestores e decisores que desejam transformar suas estratégias, ampliar sua rede de contatos e gerar resultados concretos.
               </p>
               <p className="text-lg text-white/80 font-medium italic border-l-4 border-blue-500 pl-6">
@@ -262,7 +262,7 @@ export default function App() {
                 <img
                   src="/t3experience_logotopo.png"
                   alt="T3 Experience Logo"
-                  className="h-12 w-auto"
+                  className="h-20 w-auto"
                 />
               </div>
               <p className="text-white/40 max-w-sm leading-relaxed mb-8">
