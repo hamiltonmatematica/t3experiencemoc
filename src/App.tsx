@@ -123,38 +123,38 @@ const LeadForm = ({ onSuccess }: { onSuccess: () => void }) => {
 
       <div className="space-y-4">
         <div>
-          <label className="text-xs font-bold uppercase tracking-widest text-white/40 mb-1 block">Nome Completo</label>
+          <label className="text-xs font-bold uppercase tracking-widest text-white/60 mb-1 block">Nome Completo</label>
           <input
             required
             name="nome"
             value={formData.nome}
             onChange={handleChange}
             type="text"
-            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white font-bold placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
             placeholder="Seu nome"
           />
         </div>
         <div>
-          <label className="text-xs font-bold uppercase tracking-widest text-white/40 mb-1 block">E-mail Empresarial</label>
+          <label className="text-xs font-bold uppercase tracking-widest text-white/60 mb-1 block">E-mail Empresarial</label>
           <input
             required
             name="email"
             value={formData.email}
             onChange={handleChange}
             type="email"
-            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white font-bold placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
             placeholder="seu@email.com"
           />
         </div>
         <div>
-          <label className="text-xs font-bold uppercase tracking-widest text-white/40 mb-1 block">WhatsApp (com DDD)</label>
+          <label className="text-xs font-bold uppercase tracking-widest text-white/60 mb-1 block">WhatsApp (com DDD)</label>
           <input
             required
             name="whatsapp"
             value={formData.whatsapp}
             onChange={handleChange}
             type="tel"
-            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white font-bold placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
             placeholder="(00) 00000-0000"
           />
         </div>
