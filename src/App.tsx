@@ -53,14 +53,56 @@ const Modal = ({ isOpen, onClose, children }: { isOpen: boolean, onClose: () => 
 
 const LeadForm = ({ onSuccess }: { onSuccess: () => void }) => {
   const [loading, setLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    nome: '',
+    email: '',
+    whatsapp: ''
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Lista de webhooks para enviar os dados
+  const WEBHOOKS = [
+    // Substitua pelo seu URL do Google Apps Script
+    "SUBSTITUA_PELO_SEU_WEBHOOK_DO_GOOGLE_SHEETS",
+    // Adicione o webhook do RD Station aqui quando tiver
+    // "SUBSTITUA_PELO_WEBHOOK_DO_RD_STATION"
+  ];
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
+
+    try {
+      // Envia para todos os webhooks configurados
+      const promises = WEBHOOKS
+        .filter(url => url && !url.startsWith("SUBSTITUA"))
+        .map(url =>
+          fetch(url, {
+            method: 'POST',
+            mode: 'no-cors', // Necessário para Google Apps Script se não houver CORS configurado
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+          })
+        );
+
+      await Promise.all(promises);
       onSuccess();
-    }, 1500);
+    } catch (error) {
+      console.error("Erro ao enviar lead:", error);
+      // Mesmo com erro, avançamos para não bloquear o usuário, 
+      // mas em um cenário real poderíamos tratar melhor.
+      onSuccess();
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
   };
 
   return (
@@ -75,15 +117,39 @@ const LeadForm = ({ onSuccess }: { onSuccess: () => void }) => {
       <div className="space-y-4">
         <div>
           <label className="text-xs font-bold uppercase tracking-widest text-black/40 mb-1 block">Nome Completo</label>
-          <input required type="text" className="w-full bg-black/5 border border-black/10 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Seu nome" />
+          <input
+            required
+            name="nome"
+            value={formData.nome}
+            onChange={handleChange}
+            type="text"
+            className="w-full bg-black/5 border border-black/10 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Seu nome"
+          />
         </div>
         <div>
           <label className="text-xs font-bold uppercase tracking-widest text-black/40 mb-1 block">E-mail Corporativo</label>
-          <input required type="email" className="w-full bg-black/5 border border-black/10 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="seu@email.com" />
+          <input
+            required
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            type="email"
+            className="w-full bg-black/5 border border-black/10 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="seu@email.com"
+          />
         </div>
         <div>
           <label className="text-xs font-bold uppercase tracking-widest text-black/40 mb-1 block">WhatsApp (com DDD)</label>
-          <input required type="tel" className="w-full bg-black/5 border border-black/10 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="(00) 00000-0000" />
+          <input
+            required
+            name="whatsapp"
+            value={formData.whatsapp}
+            onChange={handleChange}
+            type="tel"
+            className="w-full bg-black/5 border border-black/10 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="(00) 00000-0000"
+          />
         </div>
       </div>
 
@@ -148,14 +214,12 @@ export default function App() {
             </p>
 
             <div className="flex justify-center items-center">
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => setIsModalOpen(true)}
                 className="bg-white text-black px-12 py-5 rounded-full font-bold text-lg flex items-center justify-center gap-4 hover:scale-[1.05] transition-all shadow-[0_0_40px_rgba(255,255,255,0.1)] uppercase tracking-wider"
               >
                 Entrar para o grupo VIP <span className="text-xl">↗</span>
-              </a>
+              </button>
             </div>
           </motion.div>
         </div>
@@ -184,14 +248,12 @@ export default function App() {
             ))}
           </div>
 
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => setIsModalOpen(true)}
             className="bg-white/5 hover:bg-white/10 border border-white/10 text-white px-10 py-5 rounded-2xl font-bold flex items-center gap-3 mx-auto transition-all w-fit"
           >
             Quero entrar no grupo VIP <ChevronRight size={20} />
-          </a>
+          </button>
         </div>
       </section>
 
@@ -206,14 +268,12 @@ export default function App() {
           <p className="text-xl font-display font-bold text-white/90 mb-12 leading-relaxed">
             O grupo VIP do T3 Experience vai liberar em primeira mão todas as informações que você precisa: data oficial, local, lotes promocionais e benefícios exclusivos.
           </p>
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => setIsModalOpen(true)}
             className="inline-block bg-white text-black px-12 py-6 rounded-2xl font-bold text-xl hover:scale-105 transition-transform shadow-2xl"
           >
             Clique aqui e garanta sua vaga
-          </a>
+          </button>
           <div className="mt-8 text-sm font-bold text-blue-400 uppercase tracking-widest">
             Acesso antecipado e benefícios exclusivos
           </div>
