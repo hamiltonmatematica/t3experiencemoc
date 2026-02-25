@@ -250,7 +250,7 @@ export default function App() {
 
           <button
             onClick={() => setIsModalOpen(true)}
-            className="bg-white/5 hover:bg-white/10 border border-white/10 text-white px-10 py-5 rounded-2xl font-bold flex items-center gap-3 mx-auto transition-all w-fit"
+            className="bg-white text-black px-10 py-5 rounded-2xl font-bold flex items-center gap-3 mx-auto transition-all w-fit hover:scale-105"
           >
             Quero entrar no grupo VIP <ChevronRight size={20} />
           </button>
