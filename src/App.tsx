@@ -3,25 +3,20 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import {
   Zap,
-  Shield,
-  Cpu,
   Globe,
   ArrowRight,
-  Menu,
   X,
   ChevronRight,
   Users,
   Calendar,
   MapPin,
   CheckCircle2,
-  Sparkles,
   MessageCircle,
-  Activity,
-  User
+  Activity
 } from 'lucide-react';
 
 // --- Components ---
@@ -61,7 +56,6 @@ const LeadForm = ({ onSuccess }: { onSuccess: () => void }) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    // Simulate API call
     setTimeout(() => {
       setLoading(false);
       onSuccess();
@@ -106,109 +100,61 @@ const LeadForm = ({ onSuccess }: { onSuccess: () => void }) => {
   );
 };
 
-
-
-const Navbar = ({ onOpenVIP }: { onOpenVIP: () => void }) => {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-[#050a1a]/80 backdrop-blur-md border-b border-white/5 py-4' : 'bg-transparent py-6'
-      }`}>
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center">
-            <span className="text-black font-bold text-xl">T3</span>
-          </div>
-          <div className="flex flex-col">
-            <span className="font-display font-bold text-lg tracking-tight leading-none">EXPERIENCE</span>
-            <span className="text-[10px] font-bold text-white/40 tracking-[0.2em] uppercase">Líderes do Interior</span>
-          </div>
-        </div>
-
-        <div className="hidden md:flex items-center gap-8">
-          {['O Evento', 'Para Quem', 'VIP'].map((item) => (
-            <a key={item} href={`#${item.toLowerCase().replace(' ', '-')}`} className="text-sm font-medium text-white/60 hover:text-white transition-colors">
-              {item}
-            </a>
-          ))}
-          <button
-            onClick={onOpenVIP}
-            className="bg-white text-black px-6 py-2.5 rounded-full text-sm font-bold hover:bg-white/90 transition-all"
-          >
-            Grupo VIP
-          </button>
-        </div>
-      </div>
-    </nav>
-  );
-};
-
 export default function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-
-  const openVIP = () => {
-    setIsSuccess(false);
-    setIsModalOpen(true);
-  };
-
-
+  const WHATSAPP_URL = "https://chat.whatsapp.com/Dkout5KZ5ALEe3m71tpp9P";
 
   return (
-    <div className="min-h-screen bg-[#050a1a] selection:bg-blue-500 selection:text-white">
-      <Navbar onOpenVIP={openVIP} />
+    <div className="min-h-screen bg-[#0E153B] selection:bg-blue-500 selection:text-white">
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-[#050a1a]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_70%)]" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#050a1a] via-transparent to-[#050a1a]" />
+          <div className="absolute inset-0 bg-[#0E153B]" />
+          <div
+            className="absolute inset-0 opacity-20 mix-blend-overlay bg-cover bg-center"
+            style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop")' }}
+          />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.15),transparent_70%)]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0E153B] via-transparent to-[#0E153B]" />
         </div>
 
-        <div className="max-w-4xl mx-auto px-6 relative z-10 w-full text-center">
+        <div className="max-w-5xl mx-auto px-6 relative z-10 w-full text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-widest mb-8 mx-auto">
-              <Sparkles size={14} />
-              <span>Norte de Minas • Abril 2026</span>
-            </div>
+            <img
+              src="/t3experience_logotopo.png"
+              alt="T3 Experience Logo"
+              className="h-20 w-auto mx-auto mb-6 opacity-90"
+            />
 
-            <h1 className="text-5xl md:text-8xl font-display font-bold leading-[1.1] tracking-tighter mb-8">
-              O maior evento corporativo do <span className="text-blue-500">Norte de Minas</span> está chegando em Montes claros
+            <h1 className="text-3xl md:text-5xl font-display font-semibold leading-[1.1] tracking-tight mb-6 uppercase text-white max-w-4xl mx-auto">
+              O maior evento corporativo <br />
+              do <span className="text-blue-500">Norte de Minas</span> está <br />
+              chegando em Montes Claros
             </h1>
 
-            <p className="text-xl md:text-2xl text-white/60 max-w-2xl mx-auto mb-12 leading-relaxed">
+            <div className="text-xl md:text-3xl font-display font-light tracking-[0.2em] mb-8 uppercase text-white/80">
+              SAVE THE DATE <span className="opacity-30 mx-4 font-thin">|</span> 04 DE MARÇO
+            </div>
+
+            <p className="text-xs md:text-sm font-display font-extralight text-white/50 max-w-xl mx-auto mb-8 leading-relaxed">
               Mais de 1.000 empresários reunidos, conteúdo imersivo, networking estratégico e oportunidades reais para fazer seu negócio crescer.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <button
-                onClick={openVIP}
-                className="bg-blue-600 text-white px-12 py-6 rounded-2xl font-bold text-xl flex items-center justify-center gap-3 hover:bg-blue-500 transition-all hover:scale-[1.05] shadow-2xl shadow-blue-600/40"
+            <div className="flex justify-center items-center">
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white text-black px-12 py-5 rounded-full font-bold text-lg flex items-center justify-center gap-4 hover:scale-[1.05] transition-all shadow-[0_0_40px_rgba(255,255,255,0.1)] uppercase tracking-wider"
               >
-                Entrar para o grupo VIP <ArrowRight size={24} />
-              </button>
-            </div>
-
-            <div className="mt-20 flex flex-wrap justify-center gap-12 border-t border-white/10 pt-12">
-              <div>
-                <div className="text-4xl font-display font-bold">1.000+</div>
-                <div className="text-[10px] font-bold text-white/40 uppercase tracking-widest">Empresários</div>
-              </div>
-              <div>
-                <div className="text-4xl font-display font-bold">15-16</div>
-                <div className="text-[10px] font-bold text-white/40 uppercase tracking-widest">De Abril</div>
-              </div>
+                Entrar para o grupo VIP <span className="text-xl">↗</span>
+              </a>
             </div>
           </motion.div>
         </div>
@@ -217,8 +163,8 @@ export default function App() {
       {/* About Section */}
       <section id="o-evento" className="py-32 relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-6xl font-display font-bold mb-10">O que é o T3 Experience?</h2>
-          <p className="text-xl text-white/60 leading-relaxed mb-12">
+          <h2 className="text-4xl md:text-6xl font-display font-semibold mb-10">O que é o T3 Experience?</h2>
+          <p className="text-xl font-display font-extralight text-white/60 leading-relaxed mb-12">
             O T3 Experience é o maior evento corporativo e empresarial do Norte de Minas, idealizado para líderes, empresários e gestores que buscam crescimento consistente, networking de alto nível e conteúdo estratégico apresentado por grandes nomes do mercado.
           </p>
 
@@ -237,16 +183,16 @@ export default function App() {
             ))}
           </div>
 
-          <button
-            onClick={openVIP}
-            className="bg-white/5 hover:bg-white/10 border border-white/10 text-white px-10 py-5 rounded-2xl font-bold flex items-center gap-3 mx-auto transition-all"
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white/5 hover:bg-white/10 border border-white/10 text-white px-10 py-5 rounded-2xl font-bold flex items-center gap-3 mx-auto transition-all w-fit"
           >
             Quero entrar no grupo VIP <ChevronRight size={20} />
-          </button>
+          </a>
         </div>
       </section>
-
-
 
       {/* FOMO Section */}
       <section className="py-32 relative overflow-hidden">
@@ -255,16 +201,18 @@ export default function App() {
           <div className="w-20 h-20 bg-blue-600 rounded-3xl flex items-center justify-center mx-auto mb-10 shadow-2xl shadow-blue-600/40">
             <MessageCircle size={40} className="text-white" />
           </div>
-          <h2 className="text-4xl md:text-6xl font-display font-bold mb-8 tracking-tight">Vagas limitadas para o grupo VIP</h2>
-          <p className="text-xl text-white/60 mb-12 leading-relaxed">
+          <h2 className="text-4xl md:text-6xl font-display font-semibold mb-8 tracking-tight">Vagas limitadas para o grupo VIP</h2>
+          <p className="text-xl font-display font-extralight text-white/60 mb-12 leading-relaxed">
             O grupo VIP do T3 Experience vai liberar em primeira mão todas as informações que você precisa: data oficial, local, lotes promocionais e benefícios exclusivos.
           </p>
-          <button
-            onClick={openVIP}
-            className="bg-white text-black px-12 py-6 rounded-2xl font-bold text-xl hover:scale-105 transition-transform shadow-2xl"
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-white text-black px-12 py-6 rounded-2xl font-bold text-xl hover:scale-105 transition-transform shadow-2xl"
           >
             Clique aqui e garanta sua vaga
-          </button>
+          </a>
           <div className="mt-8 text-sm font-bold text-blue-400 uppercase tracking-widest">
             Acesso antecipado e benefícios exclusivos
           </div>
@@ -293,8 +241,8 @@ export default function App() {
             </div>
 
             <div className="order-1 lg:order-2">
-              <h2 className="text-4xl md:text-5xl font-display font-bold mb-8">Para quem é o T3 Experience?</h2>
-              <p className="text-lg text-white/60 leading-relaxed mb-8">
+              <h2 className="text-4xl md:text-5xl font-display font-semibold mb-8">Para quem é o T3 Experience?</h2>
+              <p className="text-lg font-display font-extralight text-white/60 leading-relaxed mb-8">
                 Empresários, líderes, gestores e decisores que desejam transformar suas estratégias, ampliar sua rede de contatos e gerar resultados concretos.
               </p>
               <p className="text-lg text-white/80 font-medium italic border-l-4 border-blue-500 pl-6">
@@ -311,29 +259,22 @@ export default function App() {
           <div className="grid md:grid-cols-2 gap-16 mb-24">
             <div>
               <div className="flex items-center gap-3 mb-8">
-                <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center">
-                  <span className="text-black font-bold text-xl">T3</span>
-                </div>
-                <span className="font-display font-bold text-2xl tracking-tight">3XPERIENCE</span>
+                <img
+                  src="/t3experience_logotopo.png"
+                  alt="T3 Experience Logo"
+                  className="h-12 w-auto"
+                />
               </div>
               <p className="text-white/40 max-w-sm leading-relaxed mb-8">
                 O maior evento corporativo do Norte de Minas. Uma realização focada em transformar o interior através de conexões reais.
               </p>
-              <div className="flex gap-4">
-                {/* Social Placeholders */}
-                {[1, 2, 3].map(i => (
-                  <div key={i} className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 cursor-pointer transition-all">
-                    <Globe size={18} className="text-white/40" />
-                  </div>
-                ))}
-              </div>
+              {/* Social Placeholder Removed */}
             </div>
 
             <div className="grid grid-cols-2 gap-8">
               <div>
                 <h4 className="font-bold mb-6 text-sm uppercase tracking-widest text-white/40">Organização</h4>
                 <ul className="space-y-4 font-medium">
-                  <li className="text-white/80">Diego Suzano</li>
                   <li className="text-white/80">T3 Hub</li>
                 </ul>
               </div>
@@ -357,7 +298,7 @@ export default function App() {
         </div>
       </footer>
 
-      {/* VIP Modal */}
+      {/* Modal is still here if needed but buttons now point to WHATSAPP_URL */}
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         {isSuccess ? (
           <div className="text-center py-8">
@@ -369,7 +310,7 @@ export default function App() {
               Você foi cadastrado com sucesso. Clique no botão abaixo para entrar no grupo VIP do WhatsApp.
             </p>
             <a
-              href="https://wa.me/your-link"
+              href={WHATSAPP_URL}
               target="_blank"
               className="block w-full bg-[#25D366] text-white py-4 rounded-xl font-bold hover:opacity-90 transition-all"
             >
