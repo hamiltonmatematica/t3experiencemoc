@@ -206,7 +206,7 @@ export default function App() {
             </h1>
 
             <div className="text-xl md:text-3xl font-display font-bold tracking-[0.2em] mb-8 uppercase text-white">
-              SAVE THE DATE <span className="opacity-30 mx-4 font-thin">|</span> 04 DE MARÇO
+              SAVE THE DATE <span className="opacity-30 mx-4 font-thin">|</span> 15 E 16 DE ABRIL
             </div>
 
             <p className="text-sm md:text-base font-display font-medium text-white/90 max-w-2xl mx-auto mb-12 leading-relaxed">
