@@ -207,7 +207,7 @@ export default function App() {
             />
 
             <h1 className="text-3xl md:text-5xl font-display font-semibold leading-[1.1] tracking-tight mb-6 uppercase text-white max-w-4xl mx-auto">
-              O maior evento corporativo <br />
+              O maior evento empresarial <br />
               do <span className="text-blue-500">Norte de Minas</span> está <br />
               chegando em Montes Claros
             </h1>
@@ -237,7 +237,7 @@ export default function App() {
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-6xl font-display font-semibold mb-10">O que é o T3 Experience?</h2>
           <p className="text-xl font-display font-bold text-white/90 leading-relaxed mb-12">
-            O T3 Experience é o maior evento corporativo e empresarial do Norte de Minas, idealizado para líderes, empresários e gestores que buscam crescimento consistente, networking de alto nível e conteúdo estratégico apresentado por grandes nomes do mercado.
+            O T3 Experience é o maior evento empresarial do Norte de Minas, idealizado para líderes, empresários e gestores que buscam crescimento consistente, networking de alto nível e conteúdo estratégico apresentado por grandes nomes do mercado.
           </p>
 
           <div className="grid md:grid-cols-4 gap-6 mb-16">
@@ -335,7 +335,7 @@ export default function App() {
                 />
               </div>
               <p className="text-white/40 max-w-sm leading-relaxed mb-8">
-                O maior evento corporativo do Norte de Minas. Uma realização focada em transformar o interior através de conexões reais.
+                O maior evento empresarial do Norte de Minas. Uma realização focada em transformar o interior através de conexões reais.
               </p>
               <div className="flex gap-4">
                 <a
