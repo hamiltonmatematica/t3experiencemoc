@@ -175,8 +175,9 @@ const LeadForm = ({ onSuccess }: { onSuccess: () => void }) => {
             onChange={handleChange}
             type="tel"
             maxLength={15}
-            pattern="\\([0-9]{2}\\) [0-9]{4,5}-[0-9]{4}"
-            title="Digite um número de WhatsApp válido"
+            minLength={14}
+            pattern=".[0-9]{2}. [0-9]{4,5}-[0-9]{4}"
+            title="Digite seu WhatsApp completo: (00) 99999-9999"
             className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white font-bold placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
             placeholder="(00) 00000-0000"
           />
