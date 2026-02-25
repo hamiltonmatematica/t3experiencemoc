@@ -240,17 +240,18 @@ export default function App() {
             O T3 Experience é o maior evento corporativo e empresarial do Norte de Minas, idealizado para líderes, empresários e gestores que buscam crescimento consistente, networking de alto nível e conteúdo estratégico apresentado por grandes nomes do mercado.
           </p>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <div className="grid md:grid-cols-4 gap-6 mb-16">
             {[
-              "Reúne mais de 1.000 empresários da região.",
-              "Conteúdo imersivo com palestrantes renomados.",
-              "Ambiente ideal para gerar conexões e parcerias."
+              "Mais de 1.000 empresários reunidos",
+              "08 palestrantes de renome nacional",
+              "20 painelistas especialistas",
+              "24 horas de conteúdo imersivo"
             ].map((item, i) => (
-              <div key={i} className="glass p-8 rounded-3xl border border-white/5 flex flex-col items-center gap-4 group hover:bg-white/5 transition-all">
+              <div key={i} className="glass p-6 rounded-3xl border border-white/5 flex flex-col items-center gap-4 group hover:bg-white/5 transition-all">
                 <div className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                   <CheckCircle2 size={24} className="text-blue-500" />
                 </div>
-                <span className="text-white/80 font-medium leading-tight">{item}</span>
+                <span className="text-white font-bold leading-tight text-sm uppercase tracking-wide">{item}</span>
               </div>
             ))}
           </div>
