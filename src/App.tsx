@@ -114,9 +114,9 @@ const LeadForm = ({ onSuccess }: { onSuccess: () => void }) => {
         <img
           src="/t3experience_logotopo.png"
           alt="T3 Experience Logo"
-          className="h-24 w-auto mx-auto mb-6"
+          className="h-28 w-auto mx-auto mb-6"
         />
-        <p className="text-white/90 text-sm font-bold">
+        <p className="text-white text-sm font-bold">
           Cadastre-se para receber o link exclusivo e novidades em primeira mão.
         </p>
       </div>
@@ -135,7 +135,7 @@ const LeadForm = ({ onSuccess }: { onSuccess: () => void }) => {
           />
         </div>
         <div>
-          <label className="text-xs font-bold uppercase tracking-widest text-white/40 mb-1 block">E-mail Corporativo</label>
+          <label className="text-xs font-bold uppercase tracking-widest text-white/40 mb-1 block">E-mail Empresarial</label>
           <input
             required
             name="email"
@@ -385,9 +385,9 @@ export default function App() {
             <img
               src="/t3experience_logotopo.png"
               alt="T3 Experience Logo"
-              className="h-24 w-auto mx-auto mb-6"
+              className="h-28 w-auto mx-auto mb-6"
             />
-            <p className="text-white/90 mb-8 font-bold">
+            <p className="text-white mb-8 font-bold">
               Você foi cadastrado com sucesso. Clique no botão abaixo para entrar no grupo VIP do WhatsApp.
             </p>
             <a
