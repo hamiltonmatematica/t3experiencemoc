@@ -102,9 +102,23 @@ const LeadForm = ({ onSuccess }: { onSuccess: () => void }) => {
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    let value = e.target.value;
+
+    if (e.target.name === 'whatsapp') {
+      value = value.replace(/\D/g, '');
+      if (value.length > 11) value = value.slice(0, 11);
+
+      if (value.length > 2) {
+        value = `(${value.slice(0, 2)}) ${value.slice(2)}`;
+      }
+      if (value.length > 10) {
+        value = `${value.slice(0, 10)}-${value.slice(10)}`;
+      }
+    }
+
     setFormData(prev => ({
       ...prev,
-      [e.target.name]: e.target.value
+      [e.target.name]: value
     }));
   };
 
@@ -142,6 +156,8 @@ const LeadForm = ({ onSuccess }: { onSuccess: () => void }) => {
             value={formData.email}
             onChange={handleChange}
             type="email"
+            pattern="[a-z0-9._%+\\-]+@[a-z0-9.\\-]+\\.[a-z]{2,}$"
+            title="Digite um endereço de e-mail válido (ex: seu@email.com)"
             className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white font-bold placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
             placeholder="seu@email.com"
           />
@@ -154,6 +170,10 @@ const LeadForm = ({ onSuccess }: { onSuccess: () => void }) => {
             value={formData.whatsapp}
             onChange={handleChange}
             type="tel"
+            maxLength={15}
+            minLength={14}
+            pattern="\\(\\d{2}\\)\\s\\d{4,5}-\\d{4}"
+            title="Digite um número de WhatsApp válido no formato (DDD) 99999-9999"
             className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white font-bold placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
             placeholder="(00) 00000-0000"
           />
