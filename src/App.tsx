@@ -16,7 +16,8 @@ import {
   MapPin,
   CheckCircle2,
   MessageCircle,
-  Activity
+  Activity,
+  Instagram
 } from 'lucide-react';
 
 // --- Components ---
@@ -268,7 +269,16 @@ export default function App() {
               <p className="text-white/40 max-w-sm leading-relaxed mb-8">
                 O maior evento corporativo do Norte de Minas. Uma realização focada em transformar o interior através de conexões reais.
               </p>
-              {/* Social Placeholder Removed */}
+              <div className="flex gap-4">
+                <a
+                  href="https://www.instagram.com/t3.experience?igsh=MXJ6enRrMXY4MDJhdQ%3D%3D"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:bg-white/10 transition-all"
+                >
+                  <Instagram size={20} />
+                </a>
+              </div>
             </div>
 
             <div className="grid grid-cols-2 gap-8">
