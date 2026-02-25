@@ -39,11 +39,14 @@ const Modal = ({ isOpen, onClose, children }: { isOpen: boolean, onClose: () => 
           exit={{ opacity: 0, scale: 0.9, y: 20 }}
           className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-md z-[101] p-6"
         >
-          <div className="bg-white text-black rounded-3xl p-8 shadow-2xl relative">
-            <button onClick={onClose} className="absolute top-4 right-4 text-black/40 hover:text-black">
+          <div className="bg-[#0E153B] text-white rounded-3xl p-8 shadow-2xl relative border border-white/10 overflow-hidden">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.15),transparent_70%)]" />
+            <button onClick={onClose} className="absolute top-4 right-4 text-white/40 hover:text-white z-10">
               <X size={24} />
             </button>
-            {children}
+            <div className="relative z-10">
+              {children}
+            </div>
           </div>
         </motion.div>
       </>
@@ -108,46 +111,50 @@ const LeadForm = ({ onSuccess }: { onSuccess: () => void }) => {
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
       <div className="text-center mb-6">
-        <h3 className="text-2xl font-display font-bold mb-2">Grupo VIP T3</h3>
-        <p className="text-black/60 text-sm">
+        <img
+          src="/t3experience_logotopo.png"
+          alt="T3 Experience Logo"
+          className="h-16 w-auto mx-auto mb-4"
+        />
+        <p className="text-white/60 text-sm">
           Cadastre-se para receber o link exclusivo e novidades em primeira mão.
         </p>
       </div>
 
       <div className="space-y-4">
         <div>
-          <label className="text-xs font-bold uppercase tracking-widest text-black/40 mb-1 block">Nome Completo</label>
+          <label className="text-xs font-bold uppercase tracking-widest text-white/40 mb-1 block">Nome Completo</label>
           <input
             required
             name="nome"
             value={formData.nome}
             onChange={handleChange}
             type="text"
-            className="w-full bg-black/5 border border-black/10 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
             placeholder="Seu nome"
           />
         </div>
         <div>
-          <label className="text-xs font-bold uppercase tracking-widest text-black/40 mb-1 block">E-mail Corporativo</label>
+          <label className="text-xs font-bold uppercase tracking-widest text-white/40 mb-1 block">E-mail Corporativo</label>
           <input
             required
             name="email"
             value={formData.email}
             onChange={handleChange}
             type="email"
-            className="w-full bg-black/5 border border-black/10 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
             placeholder="seu@email.com"
           />
         </div>
         <div>
-          <label className="text-xs font-bold uppercase tracking-widest text-black/40 mb-1 block">WhatsApp (com DDD)</label>
+          <label className="text-xs font-bold uppercase tracking-widest text-white/40 mb-1 block">WhatsApp (com DDD)</label>
           <input
             required
             name="whatsapp"
             value={formData.whatsapp}
             onChange={handleChange}
             type="tel"
-            className="w-full bg-black/5 border border-black/10 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
             placeholder="(00) 00000-0000"
           />
         </div>
@@ -155,12 +162,12 @@ const LeadForm = ({ onSuccess }: { onSuccess: () => void }) => {
 
       <button
         disabled={loading}
-        className="mt-6 bg-black text-white py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-black/90 transition-all disabled:opacity-50"
+        className="mt-6 bg-white text-black py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-white/90 transition-all disabled:opacity-50"
       >
         {loading ? "Processando..." : "Entrar para o grupo Vip"} <ArrowRight size={20} />
       </button>
 
-      <p className="text-[10px] text-center text-black/40 mt-4">
+      <p className="text-[10px] text-center text-white/40 mt-4">
         Ao se cadastrar, você concorda com nossa política de privacidade e em receber comunicações sobre o evento.
       </p>
     </form>
@@ -375,8 +382,12 @@ export default function App() {
             <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
               <CheckCircle2 size={40} />
             </div>
-            <h3 className="text-2xl font-display font-bold mb-2">Sucesso!</h3>
-            <p className="text-black/60 mb-8">
+            <img
+              src="/t3experience_logotopo.png"
+              alt="T3 Experience Logo"
+              className="h-16 w-auto mx-auto mb-4"
+            />
+            <p className="text-white/60 mb-8 font-medium">
               Você foi cadastrado com sucesso. Clique no botão abaixo para entrar no grupo VIP do WhatsApp.
             </p>
             <a
