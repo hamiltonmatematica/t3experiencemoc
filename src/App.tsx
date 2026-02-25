@@ -156,7 +156,8 @@ const LeadForm = ({ onSuccess }: { onSuccess: () => void }) => {
             value={formData.email}
             onChange={handleChange}
             type="email"
-            pattern="[a-z0-9._%+\\-]+@[a-z0-9.\\-]+\\.[a-z]{2,}$"
+            autoComplete="email"
+            pattern="[a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9.\\-]+\\.[a-z]{2,}$"
             title="Digite um endereço de e-mail válido (ex: seu@email.com)"
             className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white font-bold placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
             placeholder="seu@email.com"
