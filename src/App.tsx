@@ -116,14 +116,14 @@ const LeadForm = ({ onSuccess }: { onSuccess: () => void }) => {
           alt="T3 Experience Logo"
           className="h-28 w-auto mx-auto mb-6"
         />
-        <p className="text-white text-sm font-bold">
+        <p className="text-white text-base font-bold">
           Cadastre-se para receber o link exclusivo e novidades em primeira mão.
         </p>
       </div>
 
       <div className="space-y-4">
         <div>
-          <label className="text-xs font-bold uppercase tracking-widest text-white/60 mb-1 block">Nome Completo</label>
+          <label className="text-sm font-bold uppercase tracking-widest text-white/60 mb-1 block">Nome Completo</label>
           <input
             required
             name="nome"
@@ -135,7 +135,7 @@ const LeadForm = ({ onSuccess }: { onSuccess: () => void }) => {
           />
         </div>
         <div>
-          <label className="text-xs font-bold uppercase tracking-widest text-white/60 mb-1 block">E-mail Empresarial</label>
+          <label className="text-sm font-bold uppercase tracking-widest text-white/60 mb-1 block">E-mail Empresarial</label>
           <input
             required
             name="email"
@@ -147,7 +147,7 @@ const LeadForm = ({ onSuccess }: { onSuccess: () => void }) => {
           />
         </div>
         <div>
-          <label className="text-xs font-bold uppercase tracking-widest text-white/60 mb-1 block">WhatsApp (com DDD)</label>
+          <label className="text-sm font-bold uppercase tracking-widest text-white/60 mb-1 block">WhatsApp (com DDD)</label>
           <input
             required
             name="whatsapp"
@@ -167,7 +167,7 @@ const LeadForm = ({ onSuccess }: { onSuccess: () => void }) => {
         {loading ? "Processando..." : "Entrar para o grupo Vip"} <ArrowRight size={20} />
       </button>
 
-      <p className="text-[10px] text-center text-white/40 mt-4">
+      <p className="text-xs text-center text-white/40 mt-4">
         Ao se cadastrar, você concorda com nossa política de privacidade e em receber comunicações sobre o evento.
       </p>
     </form>
@@ -206,17 +206,17 @@ export default function App() {
               className="h-44 w-auto mx-auto mb-10 opacity-100"
             />
 
-            <h1 className="text-3xl md:text-5xl font-display font-semibold leading-[1.1] tracking-tight mb-6 uppercase text-white max-w-4xl mx-auto">
+            <h1 className="text-4xl md:text-7xl font-display font-semibold leading-[1.1] tracking-tight mb-6 uppercase text-white max-w-4xl mx-auto">
               O maior evento empresarial <br />
               do <span className="text-blue-500">Norte de Minas</span> está <br />
               chegando em Montes Claros
             </h1>
 
-            <div className="text-xl md:text-3xl font-display font-light tracking-[0.25em] mb-8 uppercase text-white/90">
+            <div className="text-2xl md:text-4xl font-display font-light tracking-[0.25em] mb-8 uppercase text-white/90">
               SAVE THE DATE <span className="opacity-30 mx-4 font-thin">|</span> 15 E 16 DE ABRIL
             </div>
 
-            <p className="text-sm md:text-base font-display font-medium text-white/90 max-w-2xl mx-auto mb-12 leading-relaxed">
+            <p className="text-base md:text-xl font-display font-medium text-white/90 max-w-3xl mx-auto mb-12 leading-relaxed">
               Mais de 1.000 empresários reunidos, conteúdo imersivo, networking estratégico e oportunidades reais para fazer seu negócio crescer.
             </p>
 
@@ -235,8 +235,8 @@ export default function App() {
       {/* About Section */}
       <section id="o-evento" className="py-32 relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-6xl font-display font-semibold mb-10 tracking-tight uppercase">O que é o T3 Experience?</h2>
-          <p className="text-xl font-display font-light tracking-wide text-white/90 leading-relaxed mb-12">
+          <h2 className="text-5xl md:text-7xl font-display font-semibold mb-10 tracking-tight uppercase">O que é o T3 Experience?</h2>
+          <p className="text-2xl md:text-3xl font-display font-light tracking-wide text-white/90 leading-relaxed mb-12">
             O T3 Experience é o maior evento empresarial do Norte de Minas, idealizado para líderes, empresários e gestores que buscam crescimento consistente, networking de alto nível e conteúdo estratégico apresentado por grandes nomes do mercado.
           </p>
 
@@ -251,7 +251,7 @@ export default function App() {
                 <div className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                   <CheckCircle2 size={24} className="text-blue-500" />
                 </div>
-                <span className="text-white font-bold leading-tight text-sm uppercase tracking-wide">{item}</span>
+                <span className="text-white font-bold leading-tight text-base uppercase tracking-wide">{item}</span>
               </div>
             ))}
           </div>
@@ -272,8 +272,8 @@ export default function App() {
           <div className="w-20 h-20 bg-blue-600 rounded-3xl flex items-center justify-center mx-auto mb-10 shadow-2xl shadow-blue-600/40">
             <MessageCircle size={40} className="text-white" />
           </div>
-          <h2 className="text-4xl md:text-6xl font-display font-semibold mb-8 tracking-tight uppercase">Vagas limitadas para o grupo VIP</h2>
-          <p className="text-xl font-display font-light tracking-wide text-white/90 mb-12 leading-relaxed">
+          <h2 className="text-5xl md:text-7xl font-display font-semibold mb-8 tracking-tight uppercase">Vagas limitadas para o grupo VIP</h2>
+          <p className="text-2xl md:text-3xl font-display font-light tracking-wide text-white/90 mb-12 leading-relaxed">
             O grupo VIP do T3 Experience vai liberar em primeira mão todas as informações que você precisa: data oficial, local, lotes promocionais e benefícios exclusivos.
           </p>
           <button
@@ -302,19 +302,19 @@ export default function App() {
                 ].map((item, i) => (
                   <div key={i} className="glass p-8 rounded-3xl">
                     <item.icon className="text-blue-500 mb-4" size={32} />
-                    <h4 className="font-bold mb-2">{item.title}</h4>
-                    <p className="text-xs text-white/40 leading-relaxed">{item.desc}</p>
+                    <h4 className="font-bold text-xl mb-2">{item.title}</h4>
+                    <p className="text-sm text-white/60 leading-relaxed">{item.desc}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             <div className="order-1 lg:order-2">
-              <h2 className="text-4xl md:text-5xl font-display font-semibold mb-8 uppercase tracking-tight">Para quem é o T3 Experience?</h2>
-              <p className="text-lg font-display font-light tracking-wide text-white/90 leading-relaxed mb-8">
+              <h2 className="text-5xl md:text-6xl font-display font-semibold mb-8 uppercase tracking-tight">Para quem é o T3 Experience?</h2>
+              <p className="text-xl md:text-2xl font-display font-light tracking-wide text-white/90 leading-relaxed mb-8">
                 Empresários, líderes, gestores e decisores que desejam transformar suas estratégias, ampliar sua rede de contatos e gerar resultados concretos.
               </p>
-              <p className="text-lg text-white/80 font-medium italic border-l-4 border-blue-500 pl-6">
+              <p className="text-xl md:text-2xl text-white/80 font-medium italic border-l-4 border-blue-500 pl-6">
                 "Aqui, o público é tão protagonista quanto os palestrantes. O evento acontece antes, durante e depois."
               </p>
             </div>
@@ -334,7 +334,7 @@ export default function App() {
                   className="h-20 w-auto"
                 />
               </div>
-              <p className="text-white/40 max-w-sm leading-relaxed mb-8">
+              <p className="text-lg text-white/40 max-w-sm leading-relaxed mb-8">
                 O maior evento empresarial do Norte de Minas. Uma realização focada em transformar o interior através de conexões reais.
               </p>
               <div className="flex gap-4">
@@ -351,13 +351,13 @@ export default function App() {
 
             <div className="grid grid-cols-2 gap-8">
               <div>
-                <h4 className="font-bold mb-6 text-sm uppercase tracking-widest text-white/40">Organização</h4>
+                <h4 className="font-bold mb-6 text-base uppercase tracking-widest text-white/40">Organização</h4>
                 <ul className="space-y-4 font-medium">
                   <li className="text-white/80">T3 Hub</li>
                 </ul>
               </div>
               <div>
-                <h4 className="font-bold mb-6 text-sm uppercase tracking-widest text-white/40">Localização</h4>
+                <h4 className="font-bold mb-6 text-base uppercase tracking-widest text-white/40">Localização</h4>
                 <ul className="space-y-4 font-medium">
                   <li className="text-white/80 flex items-center gap-2"><MapPin size={16} className="text-blue-500" /> Montes Claros, MG</li>
                   <li className="text-white/80 flex items-center gap-2"><Calendar size={16} className="text-blue-500" /> 15-16 Abril 2026</li>
@@ -366,7 +366,7 @@ export default function App() {
             </div>
           </div>
 
-          <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-bold uppercase tracking-[0.2em] text-white/20">
+          <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-xs font-bold uppercase tracking-[0.2em] text-white/20">
             <div>© 2026 T3 Experience. Todos os direitos reservados.</div>
             <div className="flex gap-8">
               <a href="#" className="hover:text-white transition-colors">Privacidade</a>
@@ -388,7 +388,7 @@ export default function App() {
               alt="T3 Experience Logo"
               className="h-28 w-auto mx-auto mb-6"
             />
-            <p className="text-white mb-8 font-bold">
+            <p className="text-lg text-white mb-8 font-bold">
               Você foi cadastrado com sucesso. Clique no botão abaixo para entrar no grupo VIP do WhatsApp.
             </p>
             <a
