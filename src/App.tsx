@@ -212,7 +212,7 @@ export default function App() {
               chegando em Montes Claros
             </h1>
 
-            <div className="text-xl md:text-3xl font-display font-bold tracking-[0.2em] mb-8 uppercase text-white">
+            <div className="text-xl md:text-3xl font-display font-light tracking-[0.25em] mb-8 uppercase text-white/90">
               SAVE THE DATE <span className="opacity-30 mx-4 font-thin">|</span> 15 E 16 DE ABRIL
             </div>
 
@@ -223,7 +223,7 @@ export default function App() {
             <div className="flex justify-center items-center">
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="bg-white text-black px-12 py-5 rounded-full font-bold text-lg flex items-center justify-center gap-4 hover:scale-[1.05] transition-all shadow-[0_0_40px_rgba(255,255,255,0.1)] uppercase tracking-wider"
+                className="bg-white text-black px-12 py-5 rounded-full font-bold text-lg flex items-center justify-center gap-4 hover:scale-[1.05] transition-all shadow-[0_0_40px_rgba(255,255,255,0.1)] uppercase tracking-wide"
               >
                 Entre no grupo para ter os maiores descontos <span className="text-xl">↗</span>
               </button>
@@ -235,8 +235,8 @@ export default function App() {
       {/* About Section */}
       <section id="o-evento" className="py-32 relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-6xl font-display font-semibold mb-10">O que é o T3 Experience?</h2>
-          <p className="text-xl font-display font-bold text-white/90 leading-relaxed mb-12">
+          <h2 className="text-4xl md:text-6xl font-display font-semibold mb-10 tracking-tight uppercase">O que é o T3 Experience?</h2>
+          <p className="text-xl font-display font-light tracking-wide text-white/90 leading-relaxed mb-12">
             O T3 Experience é o maior evento empresarial do Norte de Minas, idealizado para líderes, empresários e gestores que buscam crescimento consistente, networking de alto nível e conteúdo estratégico apresentado por grandes nomes do mercado.
           </p>
 
@@ -258,7 +258,7 @@ export default function App() {
 
           <button
             onClick={() => setIsModalOpen(true)}
-            className="bg-white text-black px-10 py-5 rounded-2xl font-bold flex items-center gap-3 mx-auto transition-all w-fit hover:scale-105"
+            className="bg-white text-black px-10 py-5 rounded-2xl font-bold flex items-center gap-3 mx-auto transition-all w-fit hover:scale-105 uppercase tracking-wide"
           >
             Entre no grupo para ter os maiores descontos <ChevronRight size={20} />
           </button>
@@ -272,8 +272,8 @@ export default function App() {
           <div className="w-20 h-20 bg-blue-600 rounded-3xl flex items-center justify-center mx-auto mb-10 shadow-2xl shadow-blue-600/40">
             <MessageCircle size={40} className="text-white" />
           </div>
-          <h2 className="text-4xl md:text-6xl font-display font-semibold mb-8 tracking-tight">Vagas limitadas para o grupo VIP</h2>
-          <p className="text-xl font-display font-bold text-white/90 mb-12 leading-relaxed">
+          <h2 className="text-4xl md:text-6xl font-display font-semibold mb-8 tracking-tight uppercase">Vagas limitadas para o grupo VIP</h2>
+          <p className="text-xl font-display font-light tracking-wide text-white/90 mb-12 leading-relaxed">
             O grupo VIP do T3 Experience vai liberar em primeira mão todas as informações que você precisa: data oficial, local, lotes promocionais e benefícios exclusivos.
           </p>
           <button
@@ -310,8 +310,8 @@ export default function App() {
             </div>
 
             <div className="order-1 lg:order-2">
-              <h2 className="text-4xl md:text-5xl font-display font-semibold mb-8">Para quem é o T3 Experience?</h2>
-              <p className="text-lg font-display font-bold text-white/90 leading-relaxed mb-8">
+              <h2 className="text-4xl md:text-5xl font-display font-semibold mb-8 uppercase tracking-tight">Para quem é o T3 Experience?</h2>
+              <p className="text-lg font-display font-light tracking-wide text-white/90 leading-relaxed mb-8">
                 Empresários, líderes, gestores e decisores que desejam transformar suas estratégias, ampliar sua rede de contatos e gerar resultados concretos.
               </p>
               <p className="text-lg text-white/80 font-medium italic border-l-4 border-blue-500 pl-6">
