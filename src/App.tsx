@@ -393,7 +393,7 @@ export default function App() {
             <a
               href={WHATSAPP_URL}
               target="_blank"
-              className="block w-full bg-[#25D366] text-white py-4 rounded-xl font-bold hover:opacity-90 transition-all"
+              className="block w-full bg-white text-black py-4 rounded-xl font-bold hover:bg-white/90 transition-all text-center"
             >
               Entrar no WhatsApp
             </a>
