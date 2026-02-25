@@ -108,11 +108,14 @@ const LeadForm = ({ onSuccess }: { onSuccess: () => void }) => {
       value = value.replace(/\D/g, '');
       if (value.length > 11) value = value.slice(0, 11);
 
-      if (value.length > 2) {
-        value = `(${value.slice(0, 2)}) ${value.slice(2)}`;
-      }
       if (value.length > 10) {
-        value = `${value.slice(0, 10)}-${value.slice(10)}`;
+        // Celular: (XX) 9XXXX-XXXX
+        value = `(${value.slice(0, 2)}) ${value.slice(2, 7)}-${value.slice(7)}`;
+      } else if (value.length > 6) {
+        // Fixo ou celular incompleto: (XX) XXXX-XXXX
+        value = `(${value.slice(0, 2)}) ${value.slice(2, 6)}-${value.slice(6)}`;
+      } else if (value.length > 2) {
+        value = `(${value.slice(0, 2)}) ${value.slice(2)}`;
       }
     }
 
@@ -172,9 +175,8 @@ const LeadForm = ({ onSuccess }: { onSuccess: () => void }) => {
             onChange={handleChange}
             type="tel"
             maxLength={15}
-            minLength={14}
-            pattern="\\(\\d{2}\\)\\s\\d{4,5}-\\d{4}"
-            title="Digite um número de WhatsApp válido no formato (DDD) 99999-9999"
+            pattern="\\([0-9]{2}\\) [0-9]{4,5}-[0-9]{4}"
+            title="Digite um número de WhatsApp válido"
             className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white font-bold placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
             placeholder="(00) 00000-0000"
           />
