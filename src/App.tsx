@@ -129,7 +129,7 @@ export default function App() {
             <img
               src="/t3experience_logotopo.png"
               alt="T3 Experience Logo"
-              className="h-20 w-auto mx-auto mb-6 opacity-90"
+              className="h-44 w-auto mx-auto mb-10 opacity-100"
             />
 
             <h1 className="text-3xl md:text-5xl font-display font-semibold leading-[1.1] tracking-tight mb-6 uppercase text-white max-w-4xl mx-auto">
@@ -138,11 +138,11 @@ export default function App() {
               chegando em Montes Claros
             </h1>
 
-            <div className="text-xl md:text-3xl font-display font-light tracking-[0.2em] mb-8 uppercase text-white/80">
+            <div className="text-xl md:text-3xl font-display font-bold tracking-[0.2em] mb-8 uppercase text-white">
               SAVE THE DATE <span className="opacity-30 mx-4 font-thin">|</span> 04 DE MARÇO
             </div>
 
-            <p className="text-xs md:text-sm font-display font-extralight text-white/50 max-w-xl mx-auto mb-8 leading-relaxed">
+            <p className="text-sm md:text-base font-display font-medium text-white/90 max-w-2xl mx-auto mb-12 leading-relaxed">
               Mais de 1.000 empresários reunidos, conteúdo imersivo, networking estratégico e oportunidades reais para fazer seu negócio crescer.
             </p>
 
@@ -164,7 +164,7 @@ export default function App() {
       <section id="o-evento" className="py-32 relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-6xl font-display font-semibold mb-10">O que é o T3 Experience?</h2>
-          <p className="text-xl font-display font-extralight text-white/60 leading-relaxed mb-12">
+          <p className="text-xl font-display font-bold text-white/90 leading-relaxed mb-12">
             O T3 Experience é o maior evento corporativo e empresarial do Norte de Minas, idealizado para líderes, empresários e gestores que buscam crescimento consistente, networking de alto nível e conteúdo estratégico apresentado por grandes nomes do mercado.
           </p>
 
@@ -202,7 +202,7 @@ export default function App() {
             <MessageCircle size={40} className="text-white" />
           </div>
           <h2 className="text-4xl md:text-6xl font-display font-semibold mb-8 tracking-tight">Vagas limitadas para o grupo VIP</h2>
-          <p className="text-xl font-display font-extralight text-white/60 mb-12 leading-relaxed">
+          <p className="text-xl font-display font-bold text-white/90 mb-12 leading-relaxed">
             O grupo VIP do T3 Experience vai liberar em primeira mão todas as informações que você precisa: data oficial, local, lotes promocionais e benefícios exclusivos.
           </p>
           <a

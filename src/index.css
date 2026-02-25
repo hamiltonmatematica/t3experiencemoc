@@ -12,7 +12,7 @@
 @layer base {
   body {
     @apply bg-[#0E153B] text-white antialiased;
-    font-family: var(--font-sans);
+    font-family: var(--font-display);
   }
 
   h1,
