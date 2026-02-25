@@ -157,7 +157,7 @@ const LeadForm = ({ onSuccess }: { onSuccess: () => void }) => {
         disabled={loading}
         className="mt-6 bg-black text-white py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-black/90 transition-all disabled:opacity-50"
       >
-        {loading ? "Processando..." : "Quero minha vaga no VIP"} <ArrowRight size={20} />
+        {loading ? "Processando..." : "Entrar para o grupo Vip"} <ArrowRight size={20} />
       </button>
 
       <p className="text-[10px] text-center text-black/40 mt-4">
