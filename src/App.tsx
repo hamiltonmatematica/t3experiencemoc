@@ -392,7 +392,7 @@ export default function App() {
                   <img
                     src="/alternativa_logo.jpeg"
                     alt="Apoio Alternativa"
-                    className="h-20 sm:h-24 w-auto max-w-[180px] object-contain rounded-xl bg-white/5 p-3 border border-white/10 hover:bg-white/10 transition-colors"
+                    className="h-20 sm:h-24 w-auto max-w-[180px] object-contain transition-transform hover:scale-105"
                   />
                 </div>
               </div>
