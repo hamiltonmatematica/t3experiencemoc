@@ -349,7 +349,7 @@ export default function App() {
       {/* Footer */}
       <footer className="bg-black/40 pt-32 pb-12 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-16 mb-24">
+          <div className="grid md:grid-cols-2 gap-16 mb-20">
             <div>
               <div className="flex items-center gap-3 mb-8">
                 <img
@@ -373,7 +373,7 @@ export default function App() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
               <div>
                 <h4 className="font-bold mb-6 text-base uppercase tracking-widest text-white/40">Organização</h4>
                 <ul className="space-y-4 font-medium">
@@ -386,6 +386,16 @@ export default function App() {
                   <li className="text-white/80 flex items-center gap-2"><MapPin size={16} className="text-blue-500" /> Montes Claros, MG</li>
                   <li className="text-white/80 flex items-center gap-2"><Calendar size={16} className="text-blue-500" /> 15-16 Abril 2026</li>
                 </ul>
+              </div>
+              <div>
+                <h4 className="font-bold mb-6 text-base uppercase tracking-widest text-white/40">Apoio</h4>
+                <div className="flex items-center gap-6">
+                  <img
+                    src="/alternativa_logo.jpeg"
+                    alt="Apoio Alternativa"
+                    className="h-20 sm:h-24 w-auto max-w-[180px] object-contain rounded-xl bg-white/5 p-3 border border-white/10 hover:bg-white/10 transition-colors"
+                  />
+                </div>
               </div>
             </div>
           </div>
