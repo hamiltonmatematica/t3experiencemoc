@@ -65,7 +65,7 @@ const LeadForm = ({ onSuccess }: { onSuccess: () => void }) => {
   // Lista de webhooks para enviar os dados
   const WEBHOOKS = [
     // Substitua pelo seu URL do Google Apps Script
-    "SUBSTITUA_PELO_SEU_WEBHOOK_DO_GOOGLE_SHEETS",
+    "https://script.google.com/macros/s/AKfycbxGbYGHuRueL8XNgepPkJB-7njwnY5oOs3outqURgx9jrqRm1NTenAZx8bUcQsMY2Vu1Q/exec",
     // Adicione o webhook do RD Station aqui quando tiver
     // "SUBSTITUA_PELO_WEBHOOK_DO_RD_STATION"
   ];
