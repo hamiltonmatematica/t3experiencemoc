@@ -152,7 +152,7 @@ const LeadForm = ({ onSuccess }: { onSuccess: () => void }) => {
           />
         </div>
         <div>
-          <label className="text-sm font-bold uppercase tracking-widest text-white/60 mb-1 block">E-mail Empresarial</label>
+          <label className="text-sm font-bold uppercase tracking-widest text-white/60 mb-1 block">E-mail</label>
           <input
             required
             name="email"
@@ -160,7 +160,6 @@ const LeadForm = ({ onSuccess }: { onSuccess: () => void }) => {
             onChange={handleChange}
             type="email"
             autoComplete="email"
-            pattern="[a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9.\\-]+\\.[a-z]{2,}$"
             title="Digite um endereço de e-mail válido (ex: seu@email.com)"
             className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white font-bold placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
             placeholder="seu@email.com"
