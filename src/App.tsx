@@ -198,9 +198,11 @@ const LeadForm = ({ onSuccess }: { onSuccess: () => void }) => {
 };
 
 export default function App() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
   const WHATSAPP_URL = "https://chat.whatsapp.com/Dkout5KZ5ALEe3m71tpp9P";
+
+  const handleJoinGroup = () => {
+    window.open(WHATSAPP_URL, '_blank', 'noopener,noreferrer');
+  };
 
   return (
     <div className="min-h-screen bg-[#0E153B] selection:bg-blue-500 selection:text-white">
@@ -245,7 +247,7 @@ export default function App() {
 
             <div className="flex justify-center items-center">
               <button
-                onClick={() => setIsModalOpen(true)}
+                onClick={handleJoinGroup}
                 className="bg-white text-black px-12 py-5 rounded-full font-bold text-lg flex items-center justify-center gap-4 hover:scale-[1.05] transition-all shadow-[0_0_40px_rgba(255,255,255,0.1)] uppercase tracking-wide"
               >
                 Entre no grupo para ter os maiores descontos <span className="text-xl">↗</span>
@@ -280,7 +282,7 @@ export default function App() {
           </div>
 
           <button
-            onClick={() => setIsModalOpen(true)}
+            onClick={handleJoinGroup}
             className="bg-white text-black px-10 py-5 rounded-2xl font-bold flex items-center gap-3 mx-auto transition-all w-fit hover:scale-105 uppercase tracking-wide"
           >
             Entre no grupo para ter os maiores descontos <ChevronRight size={20} />
@@ -300,7 +302,7 @@ export default function App() {
             O grupo VIP do T3 Experience vai liberar em primeira mão todas as informações que você precisa: data oficial, local, lotes promocionais e benefícios exclusivos.
           </p>
           <button
-            onClick={() => setIsModalOpen(true)}
+            onClick={handleJoinGroup}
             className="inline-block bg-white text-black px-12 py-6 rounded-2xl font-bold text-xl hover:scale-105 transition-transform shadow-2xl"
           >
             Entre no grupo para ter os maiores descontos
@@ -408,34 +410,7 @@ export default function App() {
           </div>
         </div>
       </footer>
-
-      {/* Modal is still here if needed but buttons now point to WHATSAPP_URL */}
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        {isSuccess ? (
-          <div className="text-center py-8">
-            <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
-              <CheckCircle2 size={40} />
-            </div>
-            <img
-              src="/t3experience_logotopo.png"
-              alt="T3 Experience Logo"
-              className="h-28 w-auto mx-auto mb-6"
-            />
-            <p className="text-lg text-white mb-8 font-bold">
-              Você foi cadastrado com sucesso. Clique no botão abaixo para entrar no grupo VIP do WhatsApp.
-            </p>
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              className="block w-full bg-white text-black py-4 rounded-xl font-bold hover:bg-white/90 transition-all text-center"
-            >
-              Entrar no WhatsApp
-            </a>
-          </div>
-        ) : (
-          <LeadForm onSuccess={() => setIsSuccess(true)} />
-        )}
-      </Modal>
     </div>
   );
 }
+
