@@ -250,7 +250,7 @@ export default function App() {
                 onClick={handleJoinGroup}
                 className="bg-white text-black px-12 py-5 rounded-full font-bold text-lg flex items-center justify-center gap-4 hover:scale-[1.05] transition-all shadow-[0_0_40px_rgba(255,255,255,0.1)] uppercase tracking-wide"
               >
-                Entre no grupo para ter os maiores descontos <span className="text-xl">↗</span>
+                Quero acesso antecipado e condições VIP <span className="text-xl">↗</span>
               </button>
             </div>
           </motion.div>
@@ -285,7 +285,7 @@ export default function App() {
             onClick={handleJoinGroup}
             className="bg-white text-black px-10 py-5 rounded-2xl font-bold flex items-center gap-3 mx-auto transition-all w-fit hover:scale-105 uppercase tracking-wide"
           >
-            Entre no grupo para ter os maiores descontos <ChevronRight size={20} />
+            Quero acesso antecipado e condições VIP <ChevronRight size={20} />
           </button>
         </div>
       </section>
@@ -305,7 +305,7 @@ export default function App() {
             onClick={handleJoinGroup}
             className="inline-block bg-white text-black px-12 py-6 rounded-2xl font-bold text-xl hover:scale-105 transition-transform shadow-2xl"
           >
-            Entre no grupo para ter os maiores descontos
+            Quero acesso antecipado e condições VIP
           </button>
           <div className="mt-8 text-sm font-bold text-blue-400 uppercase tracking-widest">
             Acesso antecipado e benefícios exclusivos
